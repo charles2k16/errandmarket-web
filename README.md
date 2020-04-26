@@ -1,4 +1,5 @@
 # e-market-web
+**An e-commerce platform for groceries and market products. This is only the frontend build on Vue.js and also using the elementUi library.**
 
 ## Project setup
 ```
@@ -24,6 +25,3 @@ npm run test:unit
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
