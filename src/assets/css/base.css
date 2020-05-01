@@ -11,6 +11,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+h6 {
+  font-size: 12px;
+  font-weight: lighter;
+}
 #m-0 {
   margin: 0;
 }
@@ -19,6 +23,12 @@ body {
 }
 .ml-1 {
   margin-left: 10px;
+}
+.mt-2 {
+  margin-top: 20px;
+}
+.mt-1 {
+  margin-top: 10px;
 }
 #px-1 {
   padding-left: 5px;
@@ -66,6 +76,10 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.flex_space_around {
+  display: flex;
+  justify-content: space-between;
+}
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -77,4 +91,20 @@ body {
 .image-round {
   border-radius: 50px;
   width: 40px;
+}
+.font-size-mini {
+  font-size: 12px;
+}
+.cancel_text {
+  text-decoration: line-through;
+  color: rgb(100, 95, 95) !important;
+}
+.el-button--text {
+  font-weight: bold !important;
+}
+.add_to_cart_button {
+  background: white !important;
+}
+.add_to_cart_button:hover {
+  background: #39c477 !important;
 }

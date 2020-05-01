@@ -12,24 +12,35 @@
     <div>
       <el-carousel trigger="click">
       <el-carousel-item>
-        <img src="../assets/banners/banner1.png">
+        <img src="../assets/images/banners/grain.jpeg">
       </el-carousel-item>
       <el-carousel-item>
-        <img src="../assets/banners/banner1.png">
+        <img src="../assets/images/banners/meat_banner.jpeg">
       </el-carousel-item>
     </el-carousel>
+    </div>
+
+    <div class="mt-2">
+      <FeaturedProducts />
+    </div>
+
+    <div>
+      
     </div>
   </div>
 </template>
 
 <script>
-
+import FeaturedProducts from "../components/products/FeaturedProducts"
 export default {
   name: 'Home',
+  components: {
+    FeaturedProducts
+  },
   data () {
     return {
       productCategories: [
-        { name: 'Vegetables', icon: "/img/vegetables.6a24f5cd.svg", route: '/vegetables' },
+        { name: 'Vegetables', icon: "../assets/svg/vegetables.svg", route: '/vegetables' },
         { name: 'Fruits', icon: '/img/fruits.fd4a0d34.svg', route: '/fruits' },
         { name: 'Tubers', icon: '/img/tuber.f5edc489.svg', route: '/tubers' },
         { name: 'Chicken', icon: '/img/chicken.050cb940.svg', route: '/vegetables' },
