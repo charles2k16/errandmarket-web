@@ -1,9 +1,14 @@
 <template>
-  <el-header>
-    <div class="container flex-justify">
-      <span class="logo">Errand Market</span>
+  <el-header class="sticky">
+    <div class="mx-2 flex-justify">
+      <div>
+        <span class="logo mr-3">Errand Market</span>
+        <span class="font-bold-2"><el-button icon="el-icon-location" circle style="margin-right:2px; padding:2px;" size="mini"/>
+          Greater Accra
+        </span>
+      </div>
       <el-input
-        style="width:40%;"
+        style="width:50%;"
         class="search-input"
         placeholder="Search from all our food stuffs and packages"
         v-model="search">
@@ -15,7 +20,7 @@
       </el-input>
       <div class="flex">
         <el-badge :value="3" :max="99">
-          <el-button icon="el-icon-shopping-cart-full" circle size="small"></el-button>
+          <el-button icon="el-icon-shopping-cart-full" circle size="small"/>
         </el-badge>
         <el-dropdown trigger="click" class="ml-2">
           <span class="el-dropdown-link theme-text">

@@ -2,10 +2,10 @@
   <div>
     <el-container>
       <el-alert
-      title="SPECIAL OFFERS! - Get 20% off food packages and groceries more than GHc100"
-      type="info"
-      show-icon>
-    </el-alert>
+        title="SPECIAL OFFERS! - Get 20% off food packages and groceries more than GHc100"
+        type="info"
+        show-icon>
+      </el-alert>
       <NavigationBar />
       <el-main>
         <router-view></router-view>

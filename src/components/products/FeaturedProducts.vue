@@ -7,104 +7,20 @@
 
     <div>
       <div class="flex_space_around">
-        <el-card shadow="hover">
+        <el-card shadow="hover" v-for="(product, index) in featuredProducts" :key="index">
           <div>
             <el-button type="success" size="mini" round 
               icon="el-icon-shopping-cart-full" class="add_to_cart_button" plain>
               Add to Cart
             </el-button>
           </div>
-          <img src="../../assets/images/products/tomatoes.png" alt="" width="120px;">
-          <h4>Fresh Tomatoes</h4>
-          <h6><i class="el-icon-success font-size-mini"></i> Available In - 10pcs</h6>
+          <img :src="require(`../../assets/images/products/${product.image}.png`)" alt="" width="120px;">
+          <h4>{{product.name}}</h4>
+          <h6><i class="el-icon-success font-size-mini"></i> Available In - {{product.unit}}</h6>
           
           <div class="flex-justify mt-1">
-            <el-button size="mini" type="text">GHc10</el-button>
-            <el-button size="mini" type="text" class="cancel_text">GHc10</el-button>
-          </div>
-        </el-card>
-       
-       <el-card shadow="hover">
-          <div>
-            <el-button type="success" size="mini" round 
-              icon="el-icon-shopping-cart-full" class="add_to_cart_button" plain>
-              Add to Cart
-            </el-button>
-          </div>
-          <img src="../../assets/images/products/chicken.png" alt="" width="120px;">
-          <h4>Fresh Tomatoes</h4>
-          <h6><i class="el-icon-success font-size-mini"></i> Available In - 10pcs</h6>
-          
-          <div class="flex-justify mt-1">
-            <el-button size="mini" type="text">GHc10</el-button>
-            <el-button size="mini" type="text" class="cancel_text">GHc10</el-button>
-          </div>
-        </el-card>
-
-        <el-card shadow="hover">
-          <div>
-            <el-button type="success" size="mini" round 
-              icon="el-icon-shopping-cart-full" class="add_to_cart_button" plain>
-              Add to Cart
-            </el-button>
-          </div>
-          <img src="../../assets/images/products/letuce.png" alt="" width="120px;">
-          <h4>Fresh Tomatoes</h4>
-          <h6><i class="el-icon-success font-size-mini"></i> Available In - 10pcs</h6>
-          
-          <div class="flex-justify mt-1">
-            <el-button size="mini" type="text">GHc10</el-button>
-            <el-button size="mini" type="text" class="cancel_text">GHc10</el-button>
-          </div>
-        </el-card>
-
-        <el-card shadow="hover">
-          <div>
-            <el-button type="success" size="mini" round 
-              icon="el-icon-shopping-cart-full" class="add_to_cart_button" plain>
-              Add to Cart
-            </el-button>
-          </div>
-          <img src="../../assets/images/products/egg.png" alt="" width="120px;">
-          <h4>Fresh Tomatoes</h4>
-          <h6><i class="el-icon-success font-size-mini"></i> Available In - 10pcs</h6>
-          
-          <div class="flex-justify mt-1">
-            <el-button size="mini" type="text">GHc10</el-button>
-            <el-button size="mini" type="text" class="cancel_text">GHc10</el-button>
-          </div>
-        </el-card>
-
-        <el-card shadow="hover">
-          <div>
-            <el-button type="success" size="mini" round icon="el-icon-shopping-cart-full" plain>
-              Add to Cart
-            </el-button>
-          </div>
-          <img src="../../assets/images/products/cocoyam.png" alt="" width="120px;">
-          <h4>Fresh Tomatoes</h4>
-          <h6><i class="el-icon-success font-size-mini"></i> Available In - 10pcs</h6>
-          
-          <div class="flex-justify mt-1">
-            <el-button size="mini" type="text">GHc10</el-button>
-            <el-button size="mini" type="text" class="cancel_text">GHc10</el-button>
-          </div>
-        </el-card>
-
-        <el-card shadow="hover">
-          <div>
-            <el-button type="success" size="mini" round 
-              icon="el-icon-shopping-cart-full" class="add_to_cart_button" plain>
-              Add to Cart
-            </el-button>
-          </div>
-          <img src="../../assets/images/products/meat.png" alt="" width="120px;">
-          <h4>Meat (Cow)</h4>
-          <h6><i class="el-icon-success font-size-mini"></i> Available In - 1 Pound</h6>
-          
-          <div class="flex-justify mt-1">
-            <el-button size="mini" type="text">GHc12</el-button>
-            <el-button size="mini" type="text" class="cancel_text">GHc15</el-button>
+            <el-button size="mini" type="text">GHc{{product.price}}</el-button>
+            <el-button size="mini" type="text" class="cancel_text">GHc{{product.dep_price}}</el-button>
           </div>
         </el-card>
       </div>
@@ -117,10 +33,14 @@ export default {
   name: "FeaturedProducts",
   data () {
     return {
+      image: "tomatoes",
       featuredProducts: [
-        { name: "Fresh Tomatoes", unit: "10 pieces", price: 10, desc: "Tomatoes from Ghana", image: "../../assets/images/products/tomatoes.png"},
-        { name: "Fresh Tomatoes", unit: "10 pieces", price: 10, desc: "Tomatoes from Ghana", image: "../../assets/images/products/tomatoes.png"},
-        { name: "Fresh Tomatoes", unit: "10 pieces", price: 10, desc: "Tomatoes from Ghana", image: "../../assets/images/products/tomatoes.png"}
+        { name: "Fresh Tomatoes", unit: "5 per price", price: 10, dep_price: 20, image: "tomatoes"},
+        { name: "Letuce", unit: "Pieces", price: 5, dep_price: 7, image: "letuce"},
+        { name: "Eggs", unit: "Crates", price: 10, dep_price: 18, image: "egg"},
+        { name: "Coco Yam", unit: "Tubers", price: 13, dep_price: 17, image: "cocoyam"},
+        { name: "Chicken", unit: "1 pound", price: 14, dep_price: 18, image: "chicken"},
+        { name: "Meat", unit: "1 pound", price: 12, dep_price: 17, image: "meat"},
       ]
     }
   }
