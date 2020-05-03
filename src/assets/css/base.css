@@ -75,7 +75,7 @@ h2 {
 .container {
   width: 100%;
   display: block;
-  max-width: 76rem;
+  max-width: 80rem;
   margin: 0 auto;
 }
 .el-header {
@@ -114,6 +114,11 @@ h2 {
   font-weight: bold;
   font-size: 18px;
 }
+.logo_footer {
+  color:rgb(17, 94, 49); 
+  font-weight: bold;
+  font-size: 18px;
+}
 .search-input {
   margin-top: 10px;
 }
@@ -132,7 +137,19 @@ h2 {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 23%;
-    margin-right:20px;
+    margin-right:15px;
+  }
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 49%;
+  }
+  .col-3 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+  .col-9 {
+    flex: 0 0 80%;
+    max-width: 80%;
   }
 }
 .flex-justify {
@@ -141,7 +158,7 @@ h2 {
 }
 .flex_space_around {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .flex-column {
   display: flex;
@@ -199,4 +216,7 @@ h2 {
 }
 .bg_green {
   background-color: rgb(54, 173, 133);
+}
+.bg-color_black {
+  background-color: #292E33;
 }

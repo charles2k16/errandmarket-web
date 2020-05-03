@@ -10,18 +10,22 @@
       <el-main>
         <router-view></router-view>
       </el-main>
-      <el-footer>Footer</el-footer>
+      <el-divider />
+      <el-footer>
+        <Footer/>
+      </el-footer>
     </el-container>
   </div>
 </template>
 
 <script>
 import NavigationBar from './NavigationBar'
+import Footer from './Footer'
 
 export default {
   name: 'MainPage',
   components: {
-    NavigationBar
+    NavigationBar, Footer
   }
 }
 </script>

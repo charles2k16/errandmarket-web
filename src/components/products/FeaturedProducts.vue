@@ -6,7 +6,7 @@
     </div>
 
     <div>
-      <div class="flex_space_around">
+      <div class="flex-justify">
         <el-card shadow="hover" v-for="(product, index) in featuredProducts" :key="index">
           <div>
             <el-button type="success" size="mini" round 
