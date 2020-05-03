@@ -10,7 +10,10 @@
         <el-card shadow="hover" v-for="(product, index) in featuredProducts" :key="index">
           <div>
             <el-button type="success" size="mini" round 
-              icon="el-icon-shopping-cart-full" class="add_to_cart_button" plain>
+              icon="el-icon-shopping-cart-full" 
+              class="add_to_cart_button" plain
+              @click="addToCart(product)"
+              >
               Add to Cart
             </el-button>
           </div>
@@ -42,6 +45,11 @@ export default {
         { name: "Chicken", unit: "1 pound", price: 14, dep_price: 18, image: "chicken"},
         { name: "Meat", unit: "1 pound", price: 12, dep_price: 17, image: "meat"},
       ]
+    }
+  },
+  methods: {
+    addToCart (product) {
+      console.log(product)
     }
   }
 }
