@@ -19,9 +19,20 @@
         </template>
       </el-input>
       <div class="flex">
-        <el-badge :value="3" :max="99">
-          <el-button icon="el-icon-shopping-cart-full" circle size="small"/>
-        </el-badge>
+        <el-dropdown trigger="click">
+          <el-badge :value="numberOfItems" :max="5" :hidden="hasNoItem">
+            <el-button icon="el-icon-shopping-cart-full" circle size="small"/>
+          </el-badge>
+          <el-dropdown-menu slot="dropdown" id="m-0" class="menu-scroller">
+            <div id="cartDropdown">
+              <div v-for="(item, index) in itemsInCart" :key="index">
+                <li>{{item.name}}</li>
+                <li>{{item.price}}</li>
+                <el-button icon="el-icon-delete" @click="removeCartItem(index)"/>
+              </div>
+            </div>
+          </el-dropdown-menu>
+        </el-dropdown>
         <el-dropdown trigger="click" class="ml-2">
           <span class="el-dropdown-link theme-text">
             Hi, Charles<i class="el-icon-arrow-down el-icon--right"></i>
@@ -39,12 +50,58 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: 'NavigationBar',
   data () {
     return {
-      search: ''
+      search: '',
+      numberOfItems: 0,
+      hasNoItem: true,
+      itemsInCart: []
+    }
+  },
+  computed: {
+    ...mapGetters({
+      user: 'getUser',
+      isLoggedIn: 'isLoggedIn',
+      cartItems: 'getCartItems'
+    })
+  },
+  watch: {
+    cartItems: function () {
+      this.getCartItems()
+    }
+  },
+  created () {
+    this.getCartItems()
+  },
+  methods: {
+    getCartItems () {
+      if (this.cartItems.length > 0) {
+        this.itemsInCart = this.cartItems 
+        this.numberOfItems = this.cartItems.length
+        this.hasNoItem = false
+      } else {
+        this.itemsInCart = []
+        this.numberOfItems = 0
+        this.hasNoItem = true
+      }
+    },
+    removeCartItem (i) {
+      this.$store.dispatch('removeItemFromCart', i)
     }
   }
 }
 </script>
+
+<style>
+  #cartDropdown {
+    font-family: 'Montserrat', sans-serif;
+    margin-top:-10px;
+    width: 400px !important;
+    max-height: 450px !important;
+    overflow-y: scroll !important;
+  }
+</style>

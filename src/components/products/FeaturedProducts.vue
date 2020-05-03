@@ -49,7 +49,8 @@ export default {
   },
   methods: {
     addToCart (product) {
-      console.log(product)
+      console.log('pro', product)
+      this.$store.dispatch('addItemToCart', product)
     }
   }
 }
