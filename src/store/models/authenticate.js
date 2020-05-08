@@ -1,3 +1,5 @@
+import {Message } from 'element-ui'
+
 const state = {
   user: null,
   userShoppingCart: [],
@@ -16,20 +18,29 @@ const getters = {
 // mutations
 const mutations = {
   UPDATE_CART: (state, item) => {
-    state.userShoppingCart.push(item)
+    let duplicateItem = state.userShoppingCart.find(product => product.id === item.id);
+
+    if (duplicateItem) {
+      Message.error({
+        message: 'Ops! Item already added to Cart',
+        showClose: true,
+      })
+    } else {
+      state.userShoppingCart.push(item);
+    }
   },
   REMOVE_CART_ITEM: (state, itemIndex) => {
-    state.userShoppingCart.splice(itemIndex, 1)
+    state.userShoppingCart.splice(itemIndex, 1);
   }
 }
 
 // actions
 const actions = {
   addItemToCart ({commit}, response) {
-    commit('UPDATE_CART', response)
+    commit('UPDATE_CART', response);
   },
   removeItemFromCart ({commit}, response) {
-    commit('REMOVE_CART_ITEM', response)
+    commit('REMOVE_CART_ITEM', response);
   }
 }
 

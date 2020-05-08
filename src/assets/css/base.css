@@ -220,3 +220,6 @@ h2 {
 .bg-color_black {
   background-color: #292E33;
 }
+.el-card {
+  cursor: pointer;
+}

@@ -11,13 +11,17 @@
 
     <div>
       <el-carousel trigger="click">
-      <el-carousel-item>
-        <img src="../assets/images/banners/grain.jpeg">
-      </el-carousel-item>
-      <el-carousel-item>
-        <img src="../assets/images/banners/meat_banner.jpeg">
-      </el-carousel-item>
-    </el-carousel>
+        <el-carousel-item>
+          <img src="../assets/images/banners/grain.jpeg">
+        </el-carousel-item>
+        <el-carousel-item>
+          <img src="../assets/images/banners/meat_banner.jpeg">
+        </el-carousel-item>
+      </el-carousel>
+    </div>
+
+    <div class="mt-2">
+      <FeaturedProducts />
     </div>
 
     <div class="mt-2">
@@ -28,7 +32,7 @@
       <img src="../assets/images/banners/healthy.jpg" alt="" width="600px;">
       <div style="text-align:center;">
         <h2>Food Baskets</h2>
-        <p>ddfff</p>
+        <p>Order for your already packaged food products</p>
       </div>
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6" v-for="(food, index) in foodBaskets" :key="index">
