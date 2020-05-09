@@ -25,12 +25,7 @@
     </div>
 
     <div class="mt-2">
-      <FeaturedProducts />
-    </div>
-
-    <div class="mt-2">
-      <img src="../assets/images/banners/healthy.jpg" alt="" width="600px;">
-      <div style="text-align:center;">
+      <div class="food_basket_title">
         <h2>Food Baskets</h2>
         <p>Order for your already packaged food products</p>
       </div>

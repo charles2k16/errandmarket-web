@@ -25,10 +25,29 @@
           </el-badge>
           <el-dropdown-menu slot="dropdown" id="m-0" class="menu-scroller">
             <div id="cartDropdown">
-              <div v-for="(item, index) in itemsInCart" :key="index">
-                <li>{{item.name}}</li>
-                <li>{{item.price}}</li>
-                <el-button icon="el-icon-delete" @click="removeCartItem(index)"/>
+              <div id="cartItem" v-for="(item, index) in itemsInCart" :key="index">
+                <div>
+                  <img :src="require(`../assets/images/products/${item.image}.png`)" 
+                    alt="item" width="80px;"
+                  ></div>
+                <div>
+                  <li>{{item.name}}</li>
+                  <li>Qty: 1</li>
+                  <li>GH₵ {{item.price}}</li>
+                </div>
+                <div>
+                  <el-button type="text" icon="el-icon-delete"
+                   @click="removeCartItem(index)"
+                  />
+                </div>
+              </div>
+              <div class="flex-justify px-1">
+                <h5>SUBTOTAL:</h5>
+                <h5>110.00</h5>
+              </div>
+              <div class="flex-justify mt-2">
+                <el-button size="small" type="primary">Checkout</el-button>
+                <el-button size="small" type="primary">View Cart</el-button>
               </div>
             </div>
           </el-dropdown-menu>
@@ -89,8 +108,8 @@ export default {
         this.hasNoItem = true
       }
     },
-    removeCartItem (i) {
-      this.$store.dispatch('removeItemFromCart', i)
+    removeCartItem (itemIndex) {
+      this.$store.dispatch('removeItemFromCart', itemIndex)
     }
   }
 }
@@ -100,8 +119,32 @@ export default {
   #cartDropdown {
     font-family: 'Montserrat', sans-serif;
     margin-top:-10px;
-    width: 400px !important;
-    max-height: 450px !important;
+    padding: 1px;
+    max-width: 500px !important;
+    max-height: 350px !important;
     overflow-y: scroll !important;
+  }
+  #cartItem {
+    display: flex;
+    cursor: pointer;
+    padding: 7px;
+  }
+   #cartItem:hover {
+    background-color: aliceblue;
+  }
+  #cartItem div:nth-of-type(1) {
+    flex-grow: 0; 
+    max-width: 40%;
+    border: 1px solid rgb(219, 217, 217);
+  }
+  #cartItem div:nth-of-type(2) {
+    flex-grow: 2; 
+    max-width: 52%;
+    margin-left: 20px;
+  }
+  #cartItem div:nth-of-type(3) {
+    flex-grow: 0; 
+    max-width: 8%;
+    margin-left: 20px;
   }
 </style>

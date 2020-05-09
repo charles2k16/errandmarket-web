@@ -32,6 +32,9 @@ h2 {
   font-size: 22px;
   font-weight: bold;
 }
+li {
+  list-style: none;
+}
 #m-0 {
   margin: 0;
 }
@@ -60,6 +63,16 @@ h2 {
   margin-left: 10px;
   margin-right: 10px;
 }
+.mb-1 {
+  margin-bottom: 10px;
+}
+.mb-2 {
+  margin-bottom: 20px;
+}
+.px-1 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 #px-1 {
   padding-left: 5px;
   padding-right: 20px;
@@ -79,10 +92,15 @@ h2 {
   margin: 0 auto;
 }
 .el-header {
-  background: rgb(35,187,136);
-  background: linear-gradient(90deg, rgba(35,187,136,1) 31%, rgba(18,214,112,0.9066001400560224) 76%);
+  background: rgb(107,151,3);
+  background: linear-gradient(90deg, rgba(107,151,3,1) 40%, rgba(132,179,22,1) 66%);
   color: #333;
   line-height: 60px;
+}
+.el-footer {
+  background: #292E33;
+  height: 200px !important;
+  color: white;
 }
 .sticky {
   position: -webkit-sticky;
@@ -137,7 +155,10 @@ h2 {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 23%;
-    margin-right:15px;
+    margin-right:10px;
+  }
+  .col-lg-3:last-child {
+    margin-right: 4px;
   }
   .col-lg-6 {
     flex: 0 0 50%;
@@ -151,6 +172,19 @@ h2 {
     flex: 0 0 80%;
     max-width: 80%;
   }
+  .col-4 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+  .col-5 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .flex-justify {
   display: flex;
@@ -192,7 +226,7 @@ h2 {
   background: white !important;
 }
 .add_to_cart_button:hover {
-  background: #39c477 !important;
+  background: #6C9804 !important;
 }
 .background_package {
   background-image: url("../images/banners/package_banner.jpeg");
@@ -222,4 +256,11 @@ h2 {
 }
 .el-card {
   cursor: pointer;
+}
+.food_basket_title {
+  background-image: url("../images/banners/breadcrumb-banner.jpg");
+  background-size: cover;
+  text-align: center;
+  min-height: 150px;
+  line-height: 70px;
 }
