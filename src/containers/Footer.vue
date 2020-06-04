@@ -1,9 +1,9 @@
 <template>
-  <div style="background: #292E33;">
+  <div>
     <div class="container">
       <div class="row">
         <div class="col-3 col-md-6 col-sm-12">
-          <span class="logo_footer">Errand Market</span> <br> <br>
+          <span class="logo_footer" style="color:white">Errand Market</span> <br> <br>
           <span>
             <el-button icon="el-icon-phone-outline" circle style="margin-right:2px; padding:2px;" size="mini" type="primary"/>
             +2334 540 5715 11
@@ -18,16 +18,18 @@
           </span>
         </div>
         <div class="col-4 col-md-6 col-sm-12">
-          <h3>Help</h3>
+          <h3 style="color:white; font-size: 18px;">Help</h3>
           <ul>
             <li>
               About Us
             </li>
             <li>Contat Us</li>
+            <li>Terms & Conditions</li>
           </ul>
         </div>
         <div class="col-5 col-md-6 col-sm-12">
-          hfgjbegjehk
+          <h3 style="color:white; font-size: 18px;">Get In Touch</h3>
+          
         </div>
       </div>
     </div>

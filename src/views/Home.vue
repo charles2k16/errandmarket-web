@@ -1,13 +1,8 @@
 <template>
   <div class="container">
-    <el-tabs>
-      <el-tab-pane v-for="product in productCategories" :key="product.name">
-        <div slot="label" class="flex-column"> 
-          <img :src="require(`../assets/images/svg/${product.icon}.svg`)" class="image-round">
-          <span>{{product.name}}</span>
-        </div>
-      </el-tab-pane>
-    </el-tabs>
+    <div>
+      <CategoryTabs />
+    </div>
 
     <div>
       <el-carousel trigger="click">
@@ -25,11 +20,14 @@
     </div>
 
     <div class="mt-2">
-      <div class="food_basket_title">
-        <h2>Food Baskets</h2>
-        <p>Order for your already packaged food products</p>
+      <div class="food_basket_title py-1">
+        <h1>Food Baskets</h1>
+        <p style="font-size: 15px;" class="mt-1">
+          Order for your already packaged food products ready at a go. <br>
+          Choose from a variety of preffered ingredients in any food basket you choose. 
+        </p>
       </div>
-      <div class="row">
+      <div class="row mt-2">
         <div class="col-lg-3 col-md-6 col-sm-6" v-for="(food, index) in foodBaskets" :key="index">
           <div :class="`food_basket_boxes flex-column-justify py-1 ${food.bgColor}`">
             <div style="color:white;">
@@ -52,25 +50,15 @@
 
 <script>
 import FeaturedProducts from "../components/products/FeaturedProducts"
+import CategoryTabs from "../components/CategoryTabs"
+
 export default {
   name: 'Home',
   components: {
-    FeaturedProducts
+    FeaturedProducts, CategoryTabs
   },
   data () {
     return {
-      productCategories: [
-        { name: 'Vegetables', icon: "vegetables", route: '/vegetables' },
-        { name: 'Fruits', icon: 'fruits', route: '/fruits' },
-        { name: 'Tubers', icon: 'tuber', route: '/tubers' },
-        { name: 'Chicken', icon: 'chicken', route: '/vegetables' },
-        { name: 'Canned Foods', icon: 'tuna', route: '/vegetables' },
-        { name: 'Grains', icon: 'grains', route: '/vegetables' },
-        { name: 'Cereals', icon: 'cereal', route: '/vegetables' },
-        { name: 'Meats', icon: 'meat', route: '/meats' },
-        { name: 'fish', icon: 'fish', route: '/fish' },
-        { name: 'Food Baskets', icon: 'packages', route: '/fish' },
-      ],
       foodBaskets: [
         { name: 'Groundnut Soup', num_ingredients: 13, price: 20, bgColor: 'bg_light_green' },
         { name: 'Light Soup', num_ingredients: 13, price: 25, bgColor: 'bg_light_orange' },
@@ -81,3 +69,15 @@ export default {
   }
 }
 </script>
+
+<style>
+  .col-lg-3:first-child {
+    margin-right: 15px;
+  }
+  .col-lg-3:nth-child(2) {
+    margin-right: 15px;
+  }
+  .col-lg-3:nth-child(3) {
+    margin-right: 15px;
+  }
+</style>

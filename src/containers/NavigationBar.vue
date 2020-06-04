@@ -46,8 +46,12 @@
                 <h5>110.00</h5>
               </div>
               <div class="flex-justify mt-2">
-                <el-button size="small" type="primary">Checkout</el-button>
-                <el-button size="small" type="primary">View Cart</el-button>
+                <router-link to="/cart">
+                  <el-button size="small" type="primary">View Cart</el-button>
+                </router-link>
+                <router-link to="/checkout">
+                  <el-button size="small" type="primary">Checkout</el-button>
+                </router-link>
               </div>
             </div>
           </el-dropdown-menu>
