@@ -19,11 +19,11 @@ const routes = [
         name: "Home",
         component: Home
       },
-      {
-        path: "/product/:",
-        name: "Home",
-        component: Home
-      },
+      // {
+      //   path: "/product/:id",
+      //   name: "Product",
+      //   component: Product
+      // },
       {
         path: "/cart",
         name: "cart",
