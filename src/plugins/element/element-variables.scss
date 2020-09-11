@@ -17,3 +17,41 @@ $--table-header-color: black;
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import "~element-ui/packages/theme-chalk/src/index";
+
+.el-header {
+  background: rgb(107, 151, 3);
+  background: linear-gradient(90deg, rgba(107, 151, 3, 1) 40%, rgba(132, 179, 22, 1) 66%);
+  color: #333;
+  line-height: 60px;
+}
+
+.el-footer {
+  background: #292E33;
+  height: 100px !important;
+  color: rgb(247, 236, 236);
+}
+
+.el-alert--info.is-light {
+  background-color: #292E33 !important;
+  color: white !important;
+}
+
+.el-alert {
+  border-radius: 0px !important;
+}
+
+.el-tabs__item {
+  height: 70px !important;
+}
+
+.el-badge__content {
+  margin-top: 15px;
+}
+
+.el-button--text {
+  font-weight: bold !important;
+}
+
+.el-card {
+  cursor: pointer;
+}
