@@ -4,7 +4,8 @@
       <el-alert
         title="SPECIAL OFFERS! - Get 20% off food packages and groceries more than GHc100"
         type="info"
-        show-icon>
+        show-icon
+      >
       </el-alert>
       <NavigationBar />
       <el-main>
@@ -12,24 +13,23 @@
       </el-main>
       <el-divider />
       <el-footer>
-        <Footer/>
+        <Footer />
       </el-footer>
     </el-container>
   </div>
 </template>
 
 <script>
-import NavigationBar from './NavigationBar'
-import Footer from './Footer'
+import NavigationBar from "./NavigationBar";
+import Footer from "./Footer";
 
 export default {
-  name: 'MainPage',
+  name: "MainPage",
   components: {
-    NavigationBar, Footer
+    NavigationBar,
+    Footer
   }
-}
+};
 </script>
 
-<style>
-  
-</style>
+<style></style>
