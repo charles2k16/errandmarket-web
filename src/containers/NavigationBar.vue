@@ -3,11 +3,7 @@
     <el-row :gutter="10">
       <el-col :xs="7" :sm="6" :md="4">
         <div class="logo-wrapper">
-          <img
-            src="../assets/images/errand market.gif"
-            alt="logo"
-            class="logo"
-          />
+          <img src="../assets/images/errand market.gif" alt="logo" />
           <!-- <span class="logo mr-3">Errand Market</span> -->
           <!-- <span>
             <img src="../assets/images/ghana.png" alt="ghana icon" width="18" />
