@@ -3,15 +3,23 @@
     <el-row :gutter="10">
       <el-col :xs="7" :sm="6" :md="4">
         <div class="logo-wrapper">
-          <img src="../assets/images/errand market.gif" alt="logo" />
+          <img
+            src="../assets/images/errand market.gif"
+            alt="logo"
+            class="logo"
+          />
           <!-- <span class="logo mr-3">Errand Market</span> -->
-          <!-- <span>
-            <img src="../assets/images/ghana.png" alt="ghana icon" width="18" />
-          </span> -->
+          <span class="hidden-sm-and-down">
+            <img
+              src="../assets/images/ghana.png"
+              alt="ghana icon"
+              class="ghana-icon"
+            />
+          </span>
         </div>
       </el-col>
 
-      <el-col :xs="14" :sm="12" :md="16">
+      <el-col :xs="14" :sm="15" :md="16">
         <div>
           <el-input
             placeholder="Search from all our food stuffs and packages"
@@ -21,13 +29,13 @@
           </el-input>
         </div>
       </el-col>
-      <el-col :xs="3" :sm="6" :md="4">
+      <el-col :xs="3" :sm="3" :md="4">
         <div class="flex">
-          <el-dropdown trigger="click" class="hidden-xs-only">
+          <el-dropdown trigger="click" class="hidden-sm-and-down nav-icons">
             <el-badge :value="numberOfItems" :max="5" :hidden="hasNoItem">
               <el-button icon="el-icon-shopping-cart-full" circle size="mini" />
             </el-badge>
-            <el-dropdown-menu slot="dropdown" id="m-0" class="menu-scroller">
+            <el-dropdown-menu slot="dropdown" class="menu-scroller m-0">
               <div id="cartDropdown">
                 <div
                   id="cartItem"
@@ -72,15 +80,15 @@
               </div>
             </el-dropdown-menu>
           </el-dropdown>
-          <div class="ml-1 hidden-xs-only">
+          <div class="hidden-xs-only nav-icons">
             <el-button icon="el-icon-collection-tag" circle size="mini" />
           </div>
-          <el-dropdown trigger="click" class="ml-1">
+          <el-dropdown trigger="click" class="nav-icons">
             <el-badge is-dot>
               <el-button icon="el-icon-user-solid" circle size="mini" />
             </el-badge>
 
-            <el-dropdown-menu slot="dropdown" id="m-0">
+            <el-dropdown-menu slot="dropdown" class="m-0">
               <el-dropdown-item icon="el-icon-user" id="px-1"
                 >Account Settings</el-dropdown-item
               >

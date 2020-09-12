@@ -33,13 +33,13 @@ div {
 h6 {
   font-size: 12px;
   font-weight: lighter;
-  color: #292E33;
+  color: #292e33;
 }
 
 h3 {
   font-size: 16px;
   font-weight: bold;
-  color: #292E33;
+  color: #292e33;
 }
 
 h2 {
@@ -56,7 +56,7 @@ li {
   list-style: none;
 }
 
-#m-0 {
+.m-0 {
   margin: 0;
 }
 
@@ -122,10 +122,12 @@ li {
 }
 
 .container {
-  width: 100%;
   display: block;
-  max-width: 80rem;
+  align-items: center;
   margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+  z-index: 1000;
 }
 
 .sticky {
@@ -136,7 +138,7 @@ li {
 }
 
 .theme-text {
-  color: #292E33;
+  color: #292e33;
   font-size: 18px;
   font-weight: 500;
 }
@@ -149,9 +151,19 @@ li {
 .logo-wrapper {
   padding-top: 6px;
 
-  img {
+  .logo {
     width: 150px;
   }
+
+  .ghana-icon {
+    width: 20px;
+    margin-left: 20px;
+    margin-bottom: 14px;
+  }
+}
+
+.nav-icons {
+  margin-left: 20px;
 }
 
 .flex {
@@ -164,7 +176,7 @@ li {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
-  margin-left: -15px
+  margin-left: -15px;
 }
 
 .flex-wrap {
@@ -207,7 +219,7 @@ li {
 
 .cancel_text {
   text-decoration: line-through;
-  color: #292E33 !important;
+  color: #292e33 !important;
 }
 
 .add_to_cart_button {
@@ -215,11 +227,11 @@ li {
 }
 
 .add_to_cart_button:hover {
-  background: #6C9804 !important;
+  background: #6c9804 !important;
 }
 
 .background_package {
-  background-image: url("../images/banners/package_banner.jpeg");
+  background-image: url('../images/banners/package_banner.jpeg');
   min-height: 370px;
   background-size: cover;
 }
@@ -249,11 +261,11 @@ li {
 }
 
 .bg-color_black {
-  background-color: #292E33;
+  background-color: #292e33;
 }
 
 .food_basket_title {
-  background-image: url("../images/banners/breadcrumb-banner.jpg");
+  background-image: url('../images/banners/breadcrumb-banner.jpg');
   background-size: cover;
   text-align: center;
   min-height: 120px;
@@ -264,8 +276,24 @@ li {
   .logo-wrapper {
     padding-top: 12px;
 
-    img {
+    .logo {
       width: 106px;
     }
+  }
+  .nav-icons {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 768px) {
+  .logo-wrapper {
+    padding-top: 12px;
+
+    .logo {
+      width: 106px;
+    }
+  }
+  .nav-icons {
+    margin-left: 5px;
   }
 }
