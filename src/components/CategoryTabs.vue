@@ -1,10 +1,18 @@
 <template>
   <div>
-    <el-tabs>
-      <el-tab-pane v-for="product in productCategories" :key="product.name">
-        <div slot="label" class="flex-column"> 
-          <img :src="require(`../assets/images/svg/${product.icon}.svg`)" class="image-round">
-          <span>{{product.name}}</span>
+    <el-tabs stretch @tab-click="handleClick" v-model="activeTab">
+      <el-tab-pane name="Groceries">
+        <div slot="label" class="flex-column">
+          <!-- <img
+            :src="require(`../assets/images/svg/${product.icon}.svg`)"
+            class="image-round"
+          /> -->
+          <i class="el-icon-grape tab-icons"></i>
+          <span>Groceries</span>
+        </div>
+
+        <div>
+          <router-view />
         </div>
       </el-tab-pane>
     </el-tabs>
@@ -13,22 +21,24 @@
 
 <script>
 export default {
-  name: 'CategoryTabs',
-  data () {
+  name: "CategoryTabs",
+  data() {
     return {
+      activeTab: "Groceries",
       productCategories: [
-        { name: 'Vegetables', icon: "vegetables", route: '/vegetables' },
-        { name: 'Fruits', icon: 'fruits', route: '/fruits' },
-        { name: 'Tubers', icon: 'tuber', route: '/tubers' },
-        { name: 'Chicken', icon: 'chicken', route: '/vegetables' },
-        { name: 'Canned Foods', icon: 'tuna', route: '/vegetables' },
-        { name: 'Grains', icon: 'grains', route: '/vegetables' },
-        { name: 'Cereals', icon: 'cereal', route: '/vegetables' },
-        { name: 'Meats', icon: 'meat', route: '/meats' },
-        { name: 'fish', icon: 'fish', route: '/fish' },
-        { name: 'Food Baskets', icon: 'packages', route: '/fish' },
-      ],
+        { name: "Groceries", icon: "el-icon-grape", route: "/vegetables" },
+        { name: "Fruits & Vegs", icon: "el-icon-apple", route: "/vegetables" },
+        { name: "Meats", icon: "el-icon-chicken", route: "/fruits" },
+        { name: "Tubers", icon: "el-icon-cherry", route: "/tubers" },
+        { name: "Food Baskets", icon: "el-icon-dish-1", route: "/vegetables" },
+        { name: "Canned Foods", icon: "el-icon-box", route: "/vegetables" }
+      ]
+    };
+  },
+  methods: {
+    handleClick(tab) {
+      console.log(tab.name);
     }
   }
-}
+};
 </script>

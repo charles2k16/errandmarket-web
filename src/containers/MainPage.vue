@@ -11,7 +11,6 @@
       <el-main>
         <router-view></router-view>
       </el-main>
-      <el-divider />
       <el-footer>
         <Footer />
       </el-footer>

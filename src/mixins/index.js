@@ -5,11 +5,14 @@ export default {
     Notification, Message
   },
   methods: {
-    errorMessage (message) {
+    errorMessage(message) {
       Message.error({
         message: message,
         showClose: true,
       })
+    },
+    removeCartItem(itemIndex) {
+      this.$store.dispatch("removeItemFromCart", itemIndex);
     }
   }
 }

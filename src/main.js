@@ -4,7 +4,7 @@ import router from './router'
 import { store } from './store'
 import mixin from './mixins'
 
-import "@/assets/css/base.scss";
+import "@/assets/css/base.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import './plugins/element/index.js'
 import './registerServiceWorker'

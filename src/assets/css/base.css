@@ -101,9 +101,22 @@ li {
   margin-bottom: 20px;
 }
 
+.mb-3 {
+  margin-bottom: 30px;
+}
+
+.mb-4 {
+  margin-bottom: 100px;
+}
+
 .px-1 {
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.px-2 {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #px-1 {
@@ -130,10 +143,17 @@ li {
   z-index: 1000;
 }
 
-.sticky {
+.sticky-header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 1000;
+}
+
+.sticky-footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
   z-index: 1000;
 }
 
@@ -150,16 +170,16 @@ li {
 
 .logo-wrapper {
   padding-top: 6px;
+}
 
-  .logo {
-    width: 150px;
-  }
+.logo {
+  width: 150px;
+}
 
-  .ghana-icon {
-    width: 20px;
-    margin-left: 20px;
-    margin-bottom: 14px;
-  }
+.ghana-icon {
+  width: 20px;
+  margin-left: 20px;
+  margin-bottom: 14px;
 }
 
 .nav-icons {
@@ -168,15 +188,6 @@ li {
 
 .flex {
   display: flex;
-}
-
-.row {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
 }
 
 .flex-wrap {
@@ -188,6 +199,11 @@ li {
 .flex-justify {
   display: flex;
   justify-content: space-between;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
 }
 
 .flex_space_around {
@@ -207,12 +223,6 @@ li {
   justify-content: space-between;
 }
 
-.image-round {
-  border-radius: 50px;
-  width: 40px;
-  border-radius: 1px solid grey;
-}
-
 .font-size-mini {
   font-size: 12px;
 }
@@ -220,14 +230,6 @@ li {
 .cancel_text {
   text-decoration: line-through;
   color: #292e33 !important;
-}
-
-.add_to_cart_button {
-  background: white !important;
-}
-
-.add_to_cart_button:hover {
-  background: #6c9804 !important;
 }
 
 .background_package {
@@ -272,14 +274,48 @@ li {
   line-height: 30px;
 }
 
+.tab-icons {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.product-icon {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer-tab-icon {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.item {
+  margin-top: -3px;
+}
+
 @media screen and (max-width: 600px) {
   .logo-wrapper {
     padding-top: 12px;
-
-    .logo {
-      width: 106px;
-    }
   }
+
+  .logo {
+    width: 106px;
+  }
+
+  .nav-icons {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .logo-wrapper {
+    padding-top: 12px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
   .nav-icons {
     margin-left: 0;
   }
@@ -288,11 +324,12 @@ li {
 @media screen and (max-width: 800px) and (min-width: 768px) {
   .logo-wrapper {
     padding-top: 12px;
-
-    .logo {
-      width: 106px;
-    }
   }
+
+  .logo {
+    width: 106px;
+  }
+
   .nav-icons {
     margin-left: 5px;
   }

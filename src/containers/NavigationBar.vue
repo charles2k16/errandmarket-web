@@ -1,5 +1,5 @@
 <template>
-  <el-header class="sticky">
+  <el-header class="sticky-header">
     <el-row :gutter="10">
       <el-col :xs="7" :sm="6" :md="4">
         <div class="logo-wrapper">
@@ -9,7 +9,7 @@
             class="logo"
           />
           <!-- <span class="logo mr-3">Errand Market</span> -->
-          <span class="hidden-sm-and-down">
+          <span class="hidden-md-and-down ">
             <img
               src="../assets/images/ghana.png"
               alt="ghana icon"
@@ -146,9 +146,6 @@ export default {
         this.numberOfItems = 0;
         this.hasNoItem = true;
       }
-    },
-    removeCartItem(itemIndex) {
-      this.$store.dispatch("removeItemFromCart", itemIndex);
     }
   }
 };

@@ -1,118 +1,215 @@
 <template>
   <div>
-    <div class="flex-justify">
-      <h3>Featured Products</h3>
-      <el-button type="text">See more</el-button>
-    </div>
-
-    <div>
-      <div class="flex-justify">
-        <el-card shadow="hover" 
-          v-for="(product, index) in featuredProducts" :key="index"
-          >
-          <div>
-            <el-button type="success" size="mini" round 
-              icon="el-icon-shopping-cart-full" 
-              class="add_to_cart_button" plain
+    <el-row :gutter="5">
+      <el-col
+        :xs="12"
+        :sm="12"
+        :md="6"
+        :lg="4"
+        :xl="4"
+        v-for="(product, index) in topProducts"
+        :key="index"
+        class="mb-1"
+      >
+        <el-card>
+          <div class="flex_space_around">
+            <i
+              class="el-icon-shopping-cart-full product-icon"
               @click="addToCart(product)"
-            >
-              Add to Cart
-            </el-button>
+            />
+            <i class="el-icon-collection-tag product-icon" />
+            <i class="el-icon-share product-icon" />
           </div>
-          <img :src="require(`../../assets/images/products/${product.image}.png`)" 
-            alt="item" width="120px;" 
-            @click="showSingleProduct(product.id)"
-          >
-          <h4>{{product.name}}</h4>
-          <h6><i class="el-icon-success font-size-mini"></i> Available In - {{product.unit}}</h6>
-          
+          <div style="text-align:center;">
+            <img
+              :src="
+                require(`../../assets/images/products/${product.image}.png`)
+              "
+              alt="item"
+              width="140px;"
+              @click="showSingleProduct(product.id)"
+            />
+          </div>
+
+          <h4>{{ product.name }}</h4>
+          <h6>
+            <i class="el-icon-success font-size-mini"></i> Available In Stocks
+          </h6>
+
           <div class="flex-justify mt-1">
-            <el-button size="mini" type="text">GH₵ {{product.price}}</el-button>
-            <el-button size="mini" type="text" class="cancel_text">GH₵ {{product.dep_price}}</el-button>
+            <el-button size="mini" type="text"
+              >GH₵ {{ product.price }}</el-button
+            >
+            <el-button size="mini" type="text" class="cancel_text"
+              >GH₵ {{ product.dep_price }}</el-button
+            >
           </div>
         </el-card>
-      </div>
-    </div>
-
-    <div class="flex-justify mt-2">
-      <h3>Top Products</h3>
-      <el-button type="text">See more</el-button>
-    </div>
-
-    <div>
-      <div class="flex-wrap">
-        <el-card shadow="hover" class="mb-1" 
-          v-for="(product, index) in topProducts" :key="index"
-          >
-          <div>
-            <el-button type="success" size="mini" round 
-              icon="el-icon-shopping-cart-full" 
-              class="add_to_cart_button" plain
-              @click="addToCart(product)"
-            >
-              Add to Cart
-            </el-button>
-          </div>
-          <img :src="require(`../../assets/images/products/${product.image}.png`)" 
-            alt="item" width="120px;" 
-            @click="showSingleProduct(product.id)"
-          >
-          <h4>{{product.name}}</h4>
-          <h6><i class="el-icon-success font-size-mini"></i> Available In - {{product.unit}}</h6>
-          
-          <div class="flex-justify mt-1">
-            <el-button size="mini" type="text">GH₵ {{product.price}}</el-button>
-            <el-button size="mini" type="text" class="cancel_text">GH₵ {{product.dep_price}}</el-button>
-          </div>
-        </el-card>
-      </div>
-    </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
 export default {
   name: "FeaturedProducts",
-  data () {
+  data() {
     return {
-      image: "tomatoes",
-      featuredProducts: [
-        { id: "091", name: "Fresh Tomatoes", unit: "5 per price", price: 10, dep_price: 20, image: "tomatoes"},
-        { id: "00120", name: "Letuce", unit: "Pieces", price: 5, dep_price: 7, image: "letuce"},
-        { id: "00121", name: "Eggs", unit: "Crates", price: 10, dep_price: 18, image: "egg"},
-        { id: "00214", name: "Coco Yam", unit: "Tubers", price: 13, dep_price: 17, image: "cocoyam"},
-        { id: "00546", name: "Chicken", unit: "1 pound", price: 14, dep_price: 18, image: "chicken"},
-        { id: "0023", name: "Meat", unit: "1 pound", price: 12, dep_price: 17, image: "meat"},
-      ],
       topProducts: [
-        { id: "091", name: "Fresh Tomatoes", unit: "5 per price", price: 10, dep_price: 20, image: "tomatoes"},
-        { id: "00120", name: "Letuce", unit: "Pieces", price: 5, dep_price: 7, image: "letuce"},
-        { id: "00121", name: "Eggs", unit: "Crates", price: 10, dep_price: 18, image: "egg"},
-        { id: "00214", name: "Coco Yam", unit: "Tubers", price: 13, dep_price: 17, image: "cocoyam"},
-        { id: "00546", name: "Chicken", unit: "1 pound", price: 14, dep_price: 18, image: "chicken"},
-        { id: "0023", name: "Meat", unit: "1 pound", price: 12, dep_price: 17, image: "meat"},
-        { id: "00214", name: "Coco Yam", unit: "Tubers", price: 13, dep_price: 17, image: "cocoyam"},
-        { id: "00546", name: "Chicken", unit: "1 pound", price: 14, dep_price: 18, image: "chicken"},
-        { id: "0023", name: "Meat", unit: "1 pound", price: 12, dep_price: 17, image: "meat"},
-        { id: "00120", name: "Letuce", unit: "Pieces", price: 5, dep_price: 7, image: "letuce"},
-        { id: "00121", name: "Eggs", unit: "Crates", price: 10, dep_price: 18, image: "egg"},
-        { id: "00546", name: "Chicken", unit: "1 pound", price: 14, dep_price: 18, image: "chicken"},
-        { id: "0023", name: "Meat", unit: "1 pound", price: 12, dep_price: 17, image: "meat"},
-        { id: "00546", name: "Chicken", unit: "1 pound", price: 14, dep_price: 18, image: "chicken"},
-        { id: "0023", name: "Meat", unit: "1 pound", price: 12, dep_price: 17, image: "meat"},
-        { id: "091", name: "Fresh Tomatoes", unit: "5 per price", price: 10, dep_price: 20, image: "tomatoes"},
-        { id: "00120", name: "Letuce", unit: "Pieces", price: 5, dep_price: 7, image: "letuce"},
-        { id: "00121", name: "Eggs", unit: "Crates", price: 10, dep_price: 18, image: "egg"},
+        {
+          id: "091",
+          name: "Fresh Tomatoes",
+          unit: "5 per price",
+          price: 10,
+          dep_price: 20,
+          image: "tomatoes"
+        },
+        {
+          id: "00120",
+          name: "Letuce",
+          unit: "Pieces",
+          price: 5,
+          dep_price: 7,
+          image: "letuce"
+        },
+        {
+          id: "00121",
+          name: "Eggs",
+          unit: "Crates",
+          price: 10,
+          dep_price: 18,
+          image: "egg"
+        },
+        {
+          id: "00214",
+          name: "Coco Yam",
+          unit: "Tubers",
+          price: 13,
+          dep_price: 17,
+          image: "cocoyam"
+        },
+        {
+          id: "00546",
+          name: "Chicken",
+          unit: "1 pound",
+          price: 14,
+          dep_price: 18,
+          image: "chicken"
+        },
+        {
+          id: "0023",
+          name: "Meat",
+          unit: "1 pound",
+          price: 12,
+          dep_price: 17,
+          image: "meat"
+        },
+        {
+          id: "00214",
+          name: "Coco Yam",
+          unit: "Tubers",
+          price: 13,
+          dep_price: 17,
+          image: "cocoyam"
+        },
+        {
+          id: "00546",
+          name: "Chicken",
+          unit: "1 pound",
+          price: 14,
+          dep_price: 18,
+          image: "chicken"
+        },
+        {
+          id: "0023",
+          name: "Meat",
+          unit: "1 pound",
+          price: 12,
+          dep_price: 17,
+          image: "meat"
+        },
+        {
+          id: "00120",
+          name: "Letuce",
+          unit: "Pieces",
+          price: 5,
+          dep_price: 7,
+          image: "letuce"
+        },
+        {
+          id: "00121",
+          name: "Eggs",
+          unit: "Crates",
+          price: 10,
+          dep_price: 18,
+          image: "egg"
+        },
+        {
+          id: "00546",
+          name: "Chicken",
+          unit: "1 pound",
+          price: 14,
+          dep_price: 18,
+          image: "chicken"
+        },
+        {
+          id: "0023",
+          name: "Meat",
+          unit: "1 pound",
+          price: 12,
+          dep_price: 17,
+          image: "meat"
+        },
+        {
+          id: "00546",
+          name: "Chicken",
+          unit: "1 pound",
+          price: 14,
+          dep_price: 18,
+          image: "chicken"
+        },
+        {
+          id: "0023",
+          name: "Meat",
+          unit: "1 pound",
+          price: 12,
+          dep_price: 17,
+          image: "meat"
+        },
+        {
+          id: "091",
+          name: "Fresh Tomatoes",
+          unit: "5 per price",
+          price: 10,
+          dep_price: 20,
+          image: "tomatoes"
+        },
+        {
+          id: "00120",
+          name: "Letuce",
+          unit: "Pieces",
+          price: 5,
+          dep_price: 7,
+          image: "letuce"
+        },
+        {
+          id: "00121",
+          name: "Eggs",
+          unit: "Crates",
+          price: 10,
+          dep_price: 18,
+          image: "egg"
+        }
       ]
-    }
+    };
   },
   methods: {
-    addToCart (product) {
-      this.$store.dispatch('addItemToCart', product)
+    addToCart(product) {
+      this.$store.dispatch("addItemToCart", product);
     },
-    showSingleProduct (id) {
-      console.log(id)
+    showSingleProduct(id) {
+      console.log(id);
     }
   }
-}
+};
 </script>

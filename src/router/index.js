@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 
 import MainPage from '@/containers/MainPage.vue'
 import Home from '../views/Home.vue'
+import Vegetables from '../views/Vegetables.vue'
+import Groceries from '../views/Groceries.vue'
+
+
 import Cart from '../views/Cart'
 
 Vue.use(VueRouter)
@@ -16,8 +20,21 @@ const routes = [
     children: [
       {
         path: "/home",
+        redirect: '/groceries',
         name: "Home",
-        component: Home
+        component: Home,
+        children: [
+          {
+            path: "/groceries",
+            name: "Groceries",
+            component: Groceries,
+          },
+          {
+            path: "/vegetables",
+            name: "Fruits & Vegs",
+            component: Vegetables,
+          }
+        ]
       },
       // {
       //   path: "/product/:id",
