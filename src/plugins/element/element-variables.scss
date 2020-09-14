@@ -32,11 +32,23 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
   height: 70px !important;
   padding: 0 10px !important;
   background: grayscale($color: #f3f1f1);
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .el-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .el-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
 }
 
 .el-alert--info.is-light {

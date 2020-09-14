@@ -52,6 +52,10 @@ h1 {
   font-weight: bold;
 }
 
+hr {
+  border: 1px solid rgb(218, 215, 215);
+}
+
 li {
   list-style: none;
 }
@@ -291,6 +295,30 @@ li {
 
 .item {
   margin-top: -3px;
+}
+
+.footer-link {
+  padding: 5px 0px;
+  color: #292e33;
+}
+
+.footer-link span {
+  text-decoration: none;
+  margin-right: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  /* color: #17013f; */
+}
+
+.footer-link .link {
+  margin-right: 15px;
+  border-right: 1px solid grey;
+  padding-right: 10px;
+}
+
+.link:hover {
+  color: #6A9719;
 }
 
 @media screen and (max-width: 600px) {

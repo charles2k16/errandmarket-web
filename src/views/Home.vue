@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="mb-4">
+    <div class="mb-2">
       <el-tabs stretch @tab-click="handleClick" v-model="activeTab">
         <el-tab-pane
           v-for="product in productCategories"

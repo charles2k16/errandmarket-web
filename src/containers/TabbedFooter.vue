@@ -1,9 +1,5 @@
 <template>
   <div class="container">
-    <div class="hidden-sm-and-down ">
-      <h2>Footer</h2>
-    </div>
-
     <el-tabs
       tab-position="bottom"
       stretch
@@ -44,7 +40,7 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "Footer",
+  name: "TabbedFooter",
   data() {
     return {
       activeTab: "Home",
