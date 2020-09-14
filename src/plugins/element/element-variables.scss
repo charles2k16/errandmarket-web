@@ -37,6 +37,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @media screen and (max-width: 600px) {
   .el-footer {
+    margin-top: 130px;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -45,6 +46,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @media screen and (max-width: 360px) {
   .el-footer {
+    margin-top: 120px;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -79,4 +81,29 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 .el-card {
   cursor: pointer;
+}
+
+.el-card__body {
+  padding: 5px !important;
+}
+
+.el-dialog.is-fullscreen {
+  background-color: #B2B2B2;
+}
+
+.el-dialog__header {
+  background-color: #FFFFFF;
+  padding: 10px 10px;
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgb(223, 220, 220);
+}
+
+.el-dialog__body {
+  padding: 0px 0px;
+  color: #606266;
+  font-size: 14px;
+  word-break: break-all;
 }

@@ -6,6 +6,8 @@ import Home from '../views/Home.vue'
 import Vegetables from '../views/Vegetables.vue'
 import Groceries from '../views/Groceries.vue'
 
+import Product from '../components/products/Product'
+
 
 import Cart from '../views/Cart'
 
@@ -36,11 +38,11 @@ const routes = [
           }
         ]
       },
-      // {
-      //   path: "/product/:id",
-      //   name: "Product",
-      //   component: Product
-      // },
+      {
+        path: "/item/:id",
+        name: "Product",
+        component: Product
+      },
       {
         path: "/cart",
         name: "cart",

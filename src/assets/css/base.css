@@ -311,6 +311,12 @@ li {
   /* color: #17013f; */
 }
 
+.product-page {
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+}
+
 .footer-link .link {
   margin-right: 15px;
   border-right: 1px solid grey;
@@ -333,6 +339,10 @@ li {
   .nav-icons {
     margin-left: 0;
   }
+
+  .tab-margin {
+    margin-bottom: 50px;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -346,6 +356,10 @@ li {
 
   .nav-icons {
     margin-left: 0;
+  }
+
+  .tab-margin {
+    margin-bottom: 50px;
   }
 }
 

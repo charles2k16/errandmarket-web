@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="mb-2">
+    <div class="tab-margin">
       <el-tabs stretch @tab-click="handleClick" v-model="activeTab">
         <el-tab-pane
           v-for="product in productCategories"
@@ -22,17 +22,6 @@
         </el-tab-pane>
       </el-tabs>
     </div>
-
-    <!-- <div>
-      <el-carousel trigger="click">
-        <el-carousel-item>
-          <img src="../assets/images/banners/grain.jpeg" />
-        </el-carousel-item>
-        <el-carousel-item>
-          <img src="../assets/images/banners/meat_banner.jpeg" />
-        </el-carousel-item>
-      </el-carousel>
-    </div> -->
   </div>
 </template>
 

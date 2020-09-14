@@ -3,7 +3,6 @@
     <el-tabs
       tab-position="bottom"
       stretch
-      @tab-click="handleClick"
       v-model="activeTab"
       class="hidden-md-and-up footer-tab"
     >

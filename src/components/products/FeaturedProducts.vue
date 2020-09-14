@@ -12,7 +12,7 @@
         class="mb-1"
       >
         <el-card>
-          <div class="flex_space_around">
+          <div class="flex_space_around mt-1">
             <i
               class="el-icon-shopping-cart-full product-icon"
               @click="addToCart(product)"
@@ -20,41 +20,65 @@
             <i class="el-icon-collection-tag product-icon" />
             <i class="el-icon-share product-icon" />
           </div>
-          <div style="text-align:center;">
+          <div @click="showProduct(product)">
             <img
               :src="
                 require(`../../assets/images/products/${product.image}.png`)
               "
               alt="item"
-              width="140px;"
-              @click="showSingleProduct(product.id)"
+              width="150px;"
+              style="text-align:center;"
             />
-          </div>
 
-          <h4>{{ product.name }}</h4>
-          <h6>
-            <i class="el-icon-success font-size-mini"></i> Available In Stocks
-          </h6>
+            <h4>{{ product.name }}</h4>
+            <h6>
+              <i class="el-icon-success font-size-mini"></i> Available In Stocks
+            </h6>
 
-          <div class="flex-justify mt-1">
-            <el-button size="mini" type="text"
-              >GH₵ {{ product.price }}</el-button
-            >
-            <el-button size="mini" type="text" class="cancel_text"
-              >GH₵ {{ product.dep_price }}</el-button
-            >
+            <div class="flex-justify mt-1">
+              <el-button size="mini" type="text"
+                >GH₵ {{ product.price }}</el-button
+              >
+              <el-button size="mini" type="text" class="cancel_text"
+                >GH₵ {{ product.dep_price }}</el-button
+              >
+            </div>
           </div>
         </el-card>
       </el-col>
     </el-row>
+
+    <el-dialog
+      fullscreen
+      :visible.sync="dialogVisible"
+      :show-close="false"
+      destroy-on-close
+    >
+      <div slot="title" class="flex-justify">
+        <h3>User Product</h3>
+        <span @click="dialogVisible = false"
+          ><i
+            class="el-icon-close"
+            style="font-weight:bold; font-size:20px;"
+          ></i
+        ></span>
+      </div>
+      <Product />
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import Product from "./Product";
+
 export default {
   name: "FeaturedProducts",
+  components: {
+    Product
+  },
   data() {
     return {
+      dialogVisible: false,
       topProducts: [
         {
           id: "091",
@@ -207,8 +231,11 @@ export default {
     addToCart(product) {
       this.$store.dispatch("addItemToCart", product);
     },
-    showSingleProduct(id) {
-      console.log(id);
+    showProduct(product) {
+      this.dialogVisible = true;
+      this.$router.push({
+        query: { item: product.name }
+      });
     }
   }
 };
