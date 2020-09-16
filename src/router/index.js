@@ -6,7 +6,7 @@ import Home from '../views/Home.vue'
 import Vegetables from '../views/Vegetables.vue'
 import Groceries from '../views/Groceries.vue'
 
-import Product from '../components/products/Product'
+import Product from '../views/Product'
 
 
 import Cart from '../views/Cart'

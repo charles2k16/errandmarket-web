@@ -8,7 +8,7 @@
               <el-carousel-item class="p-2" style="text-align:center;">
                 <img
                   style="text-align:center;"
-                  src="../../assets/images/products/tomatoes.png"
+                  src="../assets/images/products/tomatoes.png"
                   alt="item"
                   width="70%"
                 />
@@ -26,7 +26,7 @@
             </div>
             <hr style="border: 1px dotted rgb(250, 249, 249);" />
             <div class="flex">
-              <el-button type="text" class="cancel_text">GH₵ 250</el-button>
+              <el-button type="text" class="cancel_text">GH₵ 20</el-button>
               <el-button type="text">
                 <span style="font-size: 25px;">GH₵ 10</span>
               </el-button>
@@ -58,21 +58,21 @@
                   <span>
                     <a href="" class="mr-1">
                       <img
-                        src="../../assets/images/instagram.png"
+                        src="../assets/images/instagram.png"
                         alt="icon"
                         width="20"
                       />
                     </a>
                     <a href="" class="mr-1">
                       <img
-                        src="../../assets/images/facebook.png"
+                        src="../assets/images/facebook.png"
                         alt="icon"
                         width="20"
                       />
                     </a>
                     <a href="">
                       <img
-                        src="../../assets/images/whatsapp.png"
+                        src="../assets/images/whatsapp.png"
                         alt="icon"
                         width="20"
                       />
@@ -132,7 +132,7 @@
 </template>
 
 <script>
-import RelatedProducts from "./RelatedProducts";
+import RelatedProducts from "../components/products/RelatedProducts";
 
 export default {
   name: "ProductSingle",
@@ -142,13 +142,15 @@ export default {
   data() {
     return {
       rateValue: 3,
-      goBack: "./-1",
       dialogVisible: true
     };
   },
+  created() {
+    console.log(this.$route.params.id);
+  },
   methods: {
-    handleClose() {
-      this.$router.push("/groceries");
+    goBack() {
+      this.$router.push("./-1");
     }
   }
 };

@@ -7,9 +7,9 @@
         :md="6"
         :lg="4"
         :xl="4"
-        v-for="(product, index) in topProducts"
+        v-for="(product, index) in items"
         :key="index"
-        class="mb-1"
+        class="mb-1 itemRow"
       >
         <el-card>
           <div class="flex_space_around mt-1">
@@ -26,13 +26,13 @@
                 require(`../../assets/images/products/${product.image}.png`)
               "
               alt="item"
-              width="150px;"
+              height="120px;"
               style="text-align:center;"
             />
 
             <h4>{{ product.name }}</h4>
             <h6>
-              <i class="el-icon-success font-size-mini"></i> Available In Stocks
+              <i class="el-icon-success font-size-mini"></i> {{ product.unit }}
             </h6>
 
             <div class="flex-justify mt-1">
@@ -69,162 +69,19 @@
 </template>
 
 <script>
-import Product from "./Product";
+import Product from "../../views/Product";
 
 export default {
   name: "FeaturedProducts",
   components: {
     Product
   },
+  props: {
+    items: Array
+  },
   data() {
     return {
-      dialogVisible: false,
-      topProducts: [
-        {
-          id: "091",
-          name: "Fresh Tomatoes",
-          unit: "5 per price",
-          price: 10,
-          dep_price: 20,
-          image: "tomatoes"
-        },
-        {
-          id: "00120",
-          name: "Letuce",
-          unit: "Pieces",
-          price: 5,
-          dep_price: 7,
-          image: "letuce"
-        },
-        {
-          id: "00121",
-          name: "Eggs",
-          unit: "Crates",
-          price: 10,
-          dep_price: 18,
-          image: "egg"
-        },
-        {
-          id: "00214",
-          name: "Coco Yam",
-          unit: "Tubers",
-          price: 13,
-          dep_price: 17,
-          image: "cocoyam"
-        },
-        {
-          id: "00546",
-          name: "Chicken",
-          unit: "1 pound",
-          price: 14,
-          dep_price: 18,
-          image: "chicken"
-        },
-        {
-          id: "0023",
-          name: "Meat",
-          unit: "1 pound",
-          price: 12,
-          dep_price: 17,
-          image: "meat"
-        },
-        {
-          id: "00214",
-          name: "Coco Yam",
-          unit: "Tubers",
-          price: 13,
-          dep_price: 17,
-          image: "cocoyam"
-        },
-        {
-          id: "00546",
-          name: "Chicken",
-          unit: "1 pound",
-          price: 14,
-          dep_price: 18,
-          image: "chicken"
-        },
-        {
-          id: "0023",
-          name: "Meat",
-          unit: "1 pound",
-          price: 12,
-          dep_price: 17,
-          image: "meat"
-        },
-        {
-          id: "00120",
-          name: "Letuce",
-          unit: "Pieces",
-          price: 5,
-          dep_price: 7,
-          image: "letuce"
-        },
-        {
-          id: "00121",
-          name: "Eggs",
-          unit: "Crates",
-          price: 10,
-          dep_price: 18,
-          image: "egg"
-        },
-        {
-          id: "00546",
-          name: "Chicken",
-          unit: "1 pound",
-          price: 14,
-          dep_price: 18,
-          image: "chicken"
-        },
-        {
-          id: "0023",
-          name: "Meat",
-          unit: "1 pound",
-          price: 12,
-          dep_price: 17,
-          image: "meat"
-        },
-        {
-          id: "00546",
-          name: "Chicken",
-          unit: "1 pound",
-          price: 14,
-          dep_price: 18,
-          image: "chicken"
-        },
-        {
-          id: "0023",
-          name: "Meat",
-          unit: "1 pound",
-          price: 12,
-          dep_price: 17,
-          image: "meat"
-        },
-        {
-          id: "091",
-          name: "Fresh Tomatoes",
-          unit: "5 per price",
-          price: 10,
-          dep_price: 20,
-          image: "tomatoes"
-        },
-        {
-          id: "00120",
-          name: "Letuce",
-          unit: "Pieces",
-          price: 5,
-          dep_price: 7,
-          image: "letuce"
-        },
-        {
-          id: "00121",
-          name: "Eggs",
-          unit: "Crates",
-          price: 10,
-          dep_price: 18,
-          image: "egg"
-        }
-      ]
+      dialogVisible: false
     };
   },
   methods: {
@@ -232,9 +89,9 @@ export default {
       this.$store.dispatch("addItemToCart", product);
     },
     showProduct(product) {
-      this.dialogVisible = true;
       this.$router.push({
-        query: { item: product.name }
+        query: { item: product.name },
+        path: `./item/${product.id}`
       });
     }
   }

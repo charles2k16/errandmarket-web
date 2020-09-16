@@ -1,10 +1,10 @@
 <template>
   <div>
     <div>
-      <img src="../assets/images/grocery.png" alt="" width="100%" />
+      <img src="../assets/images/banners/grocery.png" alt="" width="100%" />
     </div>
     <div class="mt-2">
-      <FeaturedProducts />
+      <FeaturedProducts :items.sync="groceries" />
     </div>
 
     <!-- <div class="mt-2">
@@ -59,6 +59,152 @@ export default {
   },
   data() {
     return {
+      groceries: [
+        {
+          id: "091",
+          name: "Fresh Tomatoes",
+          unit: "GH₵2 starting price",
+          price: 10,
+          dep_price: 20,
+          image: "tomatoes"
+        },
+        {
+          id: "00120",
+          name: "Powdered Pepper",
+          unit: "GH₵5 starting price",
+          price: 5,
+          dep_price: 7,
+          image: "powder-pepper"
+        },
+        {
+          id: "00121",
+          name: "Eggs",
+          unit: "GH₵10 for a crate",
+          price: 10,
+          dep_price: 18,
+          image: "egg"
+        },
+        {
+          id: "00214",
+          name: "Coco Yam",
+          unit: "Available in tubers",
+          price: 12,
+          dep_price: 17,
+          image: "cocoyam"
+        },
+        {
+          id: "00546",
+          name: "Chicken",
+          unit: "GH₵6 for half a pound",
+          price: 12,
+          dep_price: 18,
+          image: "chicken"
+        },
+        {
+          id: "0023",
+          name: "Meat",
+          unit: "1 pound",
+          price: 12,
+          dep_price: 17,
+          image: "meat"
+        },
+        {
+          id: "00214",
+          name: "Coco Yam",
+          unit: "Tubers",
+          price: 13,
+          dep_price: 17,
+          image: "cocoyam"
+        },
+        {
+          id: "00546",
+          name: "Chicken",
+          unit: "1 pound",
+          price: 14,
+          dep_price: 18,
+          image: "chicken"
+        },
+        {
+          id: "0023",
+          name: "Meat",
+          unit: "1 pound",
+          price: 12,
+          dep_price: 17,
+          image: "meat"
+        },
+        {
+          id: "00120",
+          name: "Letuce",
+          unit: "Pieces",
+          price: 5,
+          dep_price: 7,
+          image: "letuce"
+        },
+        {
+          id: "00121",
+          name: "Eggs",
+          unit: "Crates",
+          price: 10,
+          dep_price: 18,
+          image: "egg"
+        },
+        {
+          id: "00546",
+          name: "Chicken",
+          unit: "1 pound",
+          price: 14,
+          dep_price: 18,
+          image: "chicken"
+        },
+        {
+          id: "0023",
+          name: "Meat",
+          unit: "1 pound",
+          price: 12,
+          dep_price: 17,
+          image: "meat"
+        },
+        {
+          id: "00546",
+          name: "Chicken",
+          unit: "1 pound",
+          price: 14,
+          dep_price: 18,
+          image: "chicken"
+        },
+        {
+          id: "0023",
+          name: "Meat",
+          unit: "1 pound",
+          price: 12,
+          dep_price: 17,
+          image: "meat"
+        },
+        {
+          id: "091",
+          name: "Fresh Tomatoes",
+          unit: "5 per price",
+          price: 10,
+          dep_price: 20,
+          image: "tomatoes"
+        },
+        {
+          id: "00120",
+          name: "Letuce",
+          unit: "Pieces",
+          price: 5,
+          dep_price: 7,
+          image: "letuce"
+        },
+        {
+          id: "00121",
+          name: "Eggs",
+          unit: "Crates",
+          price: 10,
+          dep_price: 18,
+          image: "egg"
+        }
+      ],
       foodBaskets: [
         {
           name: "Groundnut Soup",

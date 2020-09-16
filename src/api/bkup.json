@@ -1,0 +1,146 @@
+[{
+  "_id": {
+    "$oid": "5f3798ad756ade120baacce8"
+  },
+  "education": "None",
+  "photo": "img_pp_1.jpg",
+  "fingerprint": "img_Achiaa_Cece_tp.jpg",
+  "idCard": "img_Achia_Cecilia.jpg",
+  "spouse": [{
+    "firstName": "Kwaku ",
+    "lastName": "Addae",
+    "dob": "",
+    "phone": "",
+    "national_id": "",
+    "id_number": ""
+  }],
+  "children": [{
+    "name": "Adwoa Bafowaa",
+    "dob": ""
+  }, {
+    "name": "Ama Framaa"
+  }, {
+    "name": "Evans Kofi Ankomah"
+  }, {
+    "name": "Kwame Fae"
+  }, {
+    "name": "Bernice Achiaa"
+  }],
+  "harvestYield": [{
+    "crop_name": "Maize",
+    "acres": "3",
+    "years": [{
+      "year": "2019",
+      "major_season_harvest": "30",
+      "minor_season_harvest": "30",
+      "yearly_harvest": "61",
+      "major_season_income": {
+        "$numberInt": "1260"
+      },
+      "minor_season_income": {
+        "$numberInt": "1260"
+      },
+      "yearly_income": {
+        "$numberInt": "2520"
+      }
+    }]
+  }],
+  "inputSupport": [{
+    "year": "2020",
+    "grand_total": {
+      "$numberDouble": "1190.1"
+    },
+    "inputs": [{
+      "type": "Agro-Chemical (Approved)",
+      "name": "NPK (23-10-5)",
+      "unit_price": "42",
+      "quantity": "12",
+      "total": {
+        "$numberInt": "504"
+      }
+    }, {
+      "type": "Agro-Chemical (Approved)",
+      "name": "UREA",
+      "unit_price": "40",
+      "total": {
+        "$numberInt": "480"
+      },
+      "quantity": "12"
+    }, {
+      "type": "Agro-Chemical (Approved)",
+      "name": "Aflasafe CH02",
+      "unit_price": "40",
+      "total": {
+        "$numberInt": "120"
+      },
+      "quantity": "3"
+    }, {
+      "type": "Parametric Crop Insurance",
+      "name": "Crop Insurance",
+      "unit_price": "15",
+      "total": {
+        "$numberDouble": "52.5"
+      },
+      "quantity": "3.5"
+    }, {
+      "name": "T&D",
+      "type": "Farm Input Transportation & Distribution",
+      "unit_price": "1.40",
+      "total": {
+        "$numberDouble": "33.599999999999994"
+      },
+      "quantity": "24"
+    }]
+  }],
+  "bank": [],
+  "momo": [{
+    "phone": "0593449283",
+    "name": "Cecilia  Achiaa",
+    "network": "MTN"
+  }],
+  "title": "Mrs.",
+  "firstName": "Cecilia",
+  "lastName": "Achiaa",
+  "aka": "Achiaa",
+  "dob": {
+    "$date": {
+      "$numberLong": "-143514000000"
+    }
+  },
+  "phone": "0593449283",
+  "email": "mmm@gmail.com",
+  "hometown": "Bonte",
+  "nationality": "Ghanaian",
+  "townOfResidence": "Bonte",
+  "res_address": "BT-0145",
+  "fbo_position": "Member",
+  "fboMember_name": "Member",
+  "national_id": "Ghana Card",
+  "id_number": "GHA-715436959-1",
+  "num_children": {
+    "$numberInt": "5"
+  },
+  "years_farming": {
+    "$numberInt": "50"
+  },
+  "farmLandOwnershipType": "Self-owned",
+  "num_farmLands": {
+    "$numberInt": "6"
+  },
+  "user": {
+    "$oid": "5f251011b93e9e6b41313ca1"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1597479085213"
+    }
+  },
+  "name": "CeciliaAchiaa",
+  "slug": "achiaa",
+  "farmerId": "FPP-YACYZY-20",
+  "__v": {
+    "$numberInt": "0"
+  },
+  "farm_location": "7.772758,-1.630179",
+  "marital_status": "Not provided"
+}]
