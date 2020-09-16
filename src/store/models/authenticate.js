@@ -1,4 +1,4 @@
-import {Message } from 'element-ui'
+import { Message } from 'element-ui'
 
 const state = {
   user: null,
@@ -18,6 +18,9 @@ const getters = {
 // mutations
 const mutations = {
   UPDATE_CART: (state, item) => {
+    item.qty = 1;
+    item.total = item.qty * item.price;
+
     let duplicateItem = state.userShoppingCart.find(product => product.id === item.id);
 
     if (duplicateItem) {
@@ -27,6 +30,10 @@ const mutations = {
       })
     } else {
       state.userShoppingCart.push(item);
+      Message.success({
+        message: 'Item added to Cart',
+        showClose: true,
+      })
     }
   },
   REMOVE_CART_ITEM: (state, itemIndex) => {
@@ -36,10 +43,10 @@ const mutations = {
 
 // actions
 const actions = {
-  addItemToCart ({commit}, response) {
+  addItemToCart({ commit }, response) {
     commit('UPDATE_CART', response);
   },
-  removeItemFromCart ({commit}, response) {
+  removeItemFromCart({ commit }, response) {
     commit('REMOVE_CART_ITEM', response);
   }
 }

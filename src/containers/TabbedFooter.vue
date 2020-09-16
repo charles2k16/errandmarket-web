@@ -4,6 +4,7 @@
       tab-position="bottom"
       stretch
       v-model="activeTab"
+      @tab-click="handleClick"
       class="hidden-md-and-up footer-tab"
     >
       <el-tab-pane name="Home">
@@ -42,7 +43,7 @@ export default {
   name: "TabbedFooter",
   data() {
     return {
-      activeTab: "Home",
+      activeTab: this.$route.name,
       numberOfItems: 0,
       hasNoItem: true,
       itemsInCart: []
@@ -74,6 +75,11 @@ export default {
         this.numberOfItems = 0;
         this.hasNoItem = true;
       }
+    },
+
+    handleClick(tab) {
+      this.activeTab = tab.name;
+      this.$router.push({ name: tab.name });
     }
   }
 };

@@ -73,10 +73,10 @@
                 </div>
                 <div class="flex-justify mt-2">
                   <router-link to="/cart">
-                    <el-button size="small" type="primary">View Cart</el-button>
+                    <el-button size="mini" type="primary">View Cart</el-button>
                   </router-link>
                   <router-link to="/checkout">
-                    <el-button size="small" type="primary">Checkout</el-button>
+                    <el-button size="mini" type="primary">Checkout</el-button>
                   </router-link>
                 </div>
               </div>
@@ -155,7 +155,6 @@ export default {
 
 <style>
 #cartDropdown {
-  font-family: "Montserrat", sans-serif;
   margin-top: -10px;
   padding: 1px;
   max-width: 500px !important;

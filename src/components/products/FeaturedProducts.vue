@@ -48,9 +48,9 @@
       </el-col>
     </el-row>
 
-    <el-dialog
+    <!-- <el-dialog
       fullscreen
-      :visible.sync="dialogVisible"
+      :visible.sync="showProductModal"
       :show-close="false"
       destroy-on-close
     >
@@ -64,24 +64,21 @@
         ></span>
       </div>
       <Product />
-    </el-dialog>
+    </el-dialog> -->
   </div>
 </template>
 
 <script>
-import Product from "../../views/Product";
+// import Product from "../../views/Product";
 
 export default {
   name: "FeaturedProducts",
-  components: {
-    Product
-  },
   props: {
     items: Array
   },
   data() {
     return {
-      dialogVisible: false
+      showProductModal: false
     };
   },
   methods: {
@@ -90,7 +87,7 @@ export default {
     },
     showProduct(product) {
       this.$router.push({
-        query: { item: product.name },
+        query: { name: product.name, item: product },
         path: `./item/${product.id}`
       });
     }

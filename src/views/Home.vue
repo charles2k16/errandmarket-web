@@ -30,7 +30,7 @@ export default {
   name: "Home",
   data() {
     return {
-      activeTab: "Groceries",
+      activeTab: this.$route.name,
       productCategories: [
         { name: "Groceries", icon: "el-icon-grape", route: "/vegetables" },
         { name: "Fruits & Vegs", icon: "el-icon-apple", route: "/vegetables" },
@@ -43,8 +43,8 @@ export default {
   },
   methods: {
     handleClick(tab) {
+      this.activeTab = tab.name;
       this.$router.push({ name: tab.name });
-      console.log(tab.name);
     }
   }
 };

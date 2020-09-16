@@ -57,7 +57,7 @@ hr {
 }
 
 li {
-  font-size: 12px;
+  list-style: none;
 }
 
 .m-0 {
@@ -345,6 +345,15 @@ li {
 
 .details-tab .el-tabs__item {
   height: 40px !important;
+}
+
+.item-discount-info li {
+  font-size: 12px;
+  list-style: inside;
+}
+
+.btn-text-delete {
+  color: red !important;
 }
 
 @media screen and (max-width: 600px) {

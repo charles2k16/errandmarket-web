@@ -5,6 +5,7 @@ import MainPage from '@/containers/MainPage.vue'
 import Home from '../views/Home.vue'
 import Vegetables from '../views/Vegetables.vue'
 import Groceries from '../views/Groceries.vue'
+import MeatsPoultry from '../views/MeatsPoultry'
 
 import Product from '../views/Product'
 
@@ -35,6 +36,11 @@ const routes = [
             path: "/vegetables",
             name: "Fruits & Vegs",
             component: Vegetables,
+          },
+          {
+            path: "/fresh-meats-poultry",
+            name: "Meats",
+            component: MeatsPoultry,
           }
         ]
       },
@@ -45,7 +51,7 @@ const routes = [
       },
       {
         path: "/cart",
-        name: "cart",
+        name: "Cart",
         component: Cart
       }
     ]
