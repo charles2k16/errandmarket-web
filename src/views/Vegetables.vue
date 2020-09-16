@@ -7,7 +7,7 @@
         width="100%"
       />
     </div>
-    <div class="mt-2">
+    <div>
       <FeaturedProducts :items.sync="vegies" />
     </div>
   </div>
@@ -33,7 +33,7 @@ export default {
           image: "carrots"
         },
         {
-          id: "0021",
+          id: "0025",
           name: "Red Pepper",
           unit: "GH₵2 starting price",
           price: 2,
@@ -41,20 +41,28 @@ export default {
           image: "red-pepper"
         },
         {
-          id: "0021",
-          name: "Chilli Red Pepper",
+          id: "0024",
+          name: "Garden Eggs",
           unit: "GH₵2 starting price",
           price: 2,
           dep_price: 0,
           image: "garden-eggs"
         },
         {
-          id: "00120",
+          id: "00123",
           name: "Letuce",
           unit: "GH₵5 starting price",
           price: 5,
           dep_price: 7,
           image: "letuce"
+        },
+        {
+          id: "00122",
+          name: "Onions",
+          unit: "GH₵2 starting price",
+          price: 2,
+          dep_price: 0,
+          image: "onions"
         }
       ]
     };

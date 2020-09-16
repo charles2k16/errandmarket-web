@@ -3,7 +3,7 @@
     <div>
       <img src="../assets/images/banners/grocery.png" alt="" width="100%" />
     </div>
-    <div class="mt-2">
+    <div>
       <FeaturedProducts :items.sync="groceries" />
     </div>
 
@@ -70,11 +70,11 @@ export default {
         },
         {
           id: "00120",
-          name: "Powdered Pepper",
+          name: "Onions",
           unit: "GH₵5 starting price",
           price: 5,
           dep_price: 7,
-          image: "powder-pepper"
+          image: "onions"
         },
         {
           id: "00121",
