@@ -43,19 +43,22 @@
           </el-col>
           <el-col :xs="18" :sm="16" :md="8" :lg="8">
             <div class="quantity_input">
-              <el-select
-                v-model="item.qty"
-                class="select_input"
-                @change="quantityChange($event, item)"
-              >
-                <el-option v-for="q in quantity" :key="q" :label="q" :value="q">
-                </el-option>
+              <el-select v-model="item.qty" class="select_input">
+                <el-option
+                  v-for="q in quantity"
+                  :key="q"
+                  :label="q"
+                  :value="q"
+                  @click="quantityChange($event)"
+                />
               </el-select>
             </div>
           </el-col>
           <el-col :xs="6" :sm="6" :md="8" :lg="8">
             <div class="quantity_total">
-              <el-button type="text">GH₵ {{ item.total }}</el-button>
+              <el-button type="text" v-model="item.total"
+                >GH₵ {{ item.total }}</el-button
+              >
             </div>
           </el-col>
         </el-row>
@@ -82,9 +85,8 @@ export default {
     })
   },
   methods: {
-    quantityChange(value, item) {
-      item.total = value * item.price;
-      console.log(this.cartItems);
+    quantityChange(value) {
+      console.log(value);
     },
     goBack() {
       this.showCartModal = false;

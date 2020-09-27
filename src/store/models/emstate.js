@@ -18,9 +18,6 @@ const getters = {
 // mutations
 const mutations = {
   UPDATE_CART: (state, item) => {
-    item.qty = 1;
-    item.total = item.qty * item.price;
-
     let duplicateItem = state.userShoppingCart.find(product => product.id === item.id);
 
     if (duplicateItem) {
@@ -29,6 +26,8 @@ const mutations = {
         showClose: true,
       })
     } else {
+      item.qty = 1;
+      item.total = item.qty * item.price;
       state.userShoppingCart.push(item);
       Message.success({
         message: 'Item added to Cart',

@@ -56,7 +56,7 @@
 
                   <div>
                     <li>{{ item.name }}</li>
-                    <li>Qty: 1</li>
+                    <li>qty: {{ item.qty }}</li>
                     <li>GH₵ {{ item.price }}</li>
                   </div>
                   <div>
