@@ -6,67 +6,59 @@
     destroy-on-close
   >
     <div slot="title" class="flex-justify">
-      <h3>Cart ({{ tableData.length }} items)</h3>
+      <h3>Cart ({{ cartItems.length }} items)</h3>
       <span @click="goBack"
         ><i class="el-icon-close" style="font-weight:bold; font-size:20px;"></i
       ></span>
     </div>
-    <div class="container" style="background:white;">
-      <div>
-        <br />
-        <el-table :data="tableData">
-          <el-table-column prop="name" label="Item">
-            <template slot-scope="props">
-              <div class="flex">
-                <span style="margin-right: 10px;">
-                  <img
-                    :src="
-                      require(`../assets/images/products/${props.row.image}.png`)
-                    "
-                    alt="item"
-                    width="85px;"
-                  />
-                </span>
-                <span>
-                  <b style="font-weight:bold; font-size: 16px">{{
-                    props.row.name
-                  }}</b>
-                  <br />
-                  <small style="font-weight:500; font-size: 11px"
-                    ><b>GH₵ {{ props.row.price }}</b></small
-                  >
-                  <br />
-                  <el-button
-                    class="btn-text-delete"
-                    size="mini"
-                    type="text"
-                    icon="el-icon-delete"
-                    @click="removeCartItem(index)"
-                    >Remove</el-button
-                  >
-                </span>
-              </div>
-            </template>
-          </el-table-column>
-          <el-table-column prop="quantity" label="Quantity">
-            <template slot-scope="props">
-              <el-input-number
-                v-model="props.row.qty"
-                @change="handleChange($event, props.row)"
-                :min="1"
-                :max="10"
-              ></el-input-number>
-            </template>
-          </el-table-column>
-
-          <el-table-column prop="total" label="Total">
-            <template slot-scope="props">
-              <el-button type="text" class=""
-                >GH₵ {{ props.row.total }}</el-button
+    <div class="container" style="background:whitesmoke;">
+      <div class="cartItem" v-for="(item, index) in cartItems" :key="index">
+        <el-row :gutter="5">
+          <el-col :xs="24" :sm="24" :md="8" :lg="8">
+            <div class="flex">
+              <span style="margin-right: 10px; width:100px;">
+                <img
+                  :src="require(`../assets/images/products/${item.image}.png`)"
+                  alt="item"
+                  width="100%"
+                />
+              </span>
+              <span>
+                <b style="font-weight:bold; font-size: 16px">{{ item.name }}</b>
+                <br />
+                <small style="font-weight:500; font-size: 11px"
+                  ><b>GH₵ {{ item.price }}</b></small
+                >
+                <br />
+                <el-button
+                  class="btn-text-delete"
+                  size="mini"
+                  type="text"
+                  icon="el-icon-delete"
+                  @click="removeCartItem(index)"
+                  >Remove</el-button
+                >
+              </span>
+            </div>
+          </el-col>
+          <el-col :xs="18" :sm="16" :md="8" :lg="8">
+            <div class="quantity_input">
+              <el-select
+                v-model="item.qty"
+                class="select_input"
+                @change="quantityChange($event, item)"
               >
-            </template>
-          </el-table-column>
-        </el-table>
+                <el-option v-for="q in quantity" :key="q" :label="q" :value="q">
+                </el-option>
+              </el-select>
+            </div>
+          </el-col>
+          <el-col :xs="6" :sm="6" :md="8" :lg="8">
+            <div class="quantity_total">
+              <el-button type="text">GH₵ {{ item.total }}</el-button>
+            </div>
+          </el-col>
+        </el-row>
       </div>
     </div>
   </el-dialog>
@@ -80,7 +72,7 @@ export default {
   data() {
     return {
       showCartModal: true,
-      tableData: []
+      quantity: [1, 2, 3, 4, 5, 6, 7, 8, 10]
     };
   },
   computed: {
@@ -89,13 +81,10 @@ export default {
       cartItems: "getCartItems"
     })
   },
-  created() {
-    console.log(this.cartItems);
-    this.tableData = this.cartItems;
-  },
   methods: {
-    handleChange(e, item) {
-      item.total = e * item.price;
+    quantityChange(value, item) {
+      item.total = value * item.price;
+      console.log(this.cartItems);
     },
     goBack() {
       this.showCartModal = false;

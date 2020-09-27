@@ -356,6 +356,35 @@ li {
   color: red !important;
 }
 
+.quantity_input,
+.quantity_total {
+  margin: 20px 0px;
+}
+
+.quantity_input .select_input {
+  height: 30px;
+  line-height: 30px;
+  width: 25%;
+  padding: 0px !important;
+}
+
+.cartItem {
+  margin: 5px;
+  background: white;
+  border-radius: 5px;
+  padding: 5px 0px;
+}
+
+.quantity_total button span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.quantity_total button {
+  padding: 5px 10px;
+}
+
+
 @media screen and (max-width: 600px) {
   .logo-wrapper {
     padding-top: 12px;
@@ -371,6 +400,11 @@ li {
 
   .tab-margin {
     margin-bottom: 50px;
+  }
+
+  .quantity_input,
+  .quantity_total {
+    margin: 0px 10px;
   }
 }
 
@@ -389,6 +423,11 @@ li {
 
   .tab-margin {
     margin-bottom: 50px;
+  }
+
+  .quantity_input,
+  .quantity_total {
+    margin: 0px 10px;
   }
 }
 

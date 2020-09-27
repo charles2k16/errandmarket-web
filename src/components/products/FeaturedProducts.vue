@@ -47,30 +47,10 @@
         </el-card>
       </el-col>
     </el-row>
-
-    <!-- <el-dialog
-      fullscreen
-      :visible.sync="showProductModal"
-      :show-close="false"
-      destroy-on-close
-    >
-      <div slot="title" class="flex-justify">
-        <h3>Product Details</h3>
-        <span @click="dialogVisible = false"
-          ><i
-            class="el-icon-close"
-            style="font-weight:bold; font-size:20px;"
-          ></i
-        ></span>
-      </div>
-      <Product />
-    </el-dialog> -->
   </div>
 </template>
 
 <script>
-// import Product from "../../views/Product";
-
 export default {
   name: "FeaturedProducts",
   props: {

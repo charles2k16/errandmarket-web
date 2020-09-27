@@ -76,7 +76,6 @@ export default {
         this.hasNoItem = true;
       }
     },
-
     handleClick(tab) {
       this.activeTab = tab.name;
       this.$router.push({ name: tab.name });
