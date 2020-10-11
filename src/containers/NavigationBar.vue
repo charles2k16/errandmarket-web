@@ -38,7 +38,7 @@
               <el-button icon="el-icon-shopping-cart-full" circle size="mini" />
             </el-badge>
             <el-dropdown-menu slot="dropdown" class="menu-scroller m-0">
-              <div id="cartDropdown" v-if="itemsInCart > 0">
+              <div id="cartDropdown" v-if="cartItems.length > 0">
                 <div
                   id="cartItem"
                   v-for="(item, index) in itemsInCart"
